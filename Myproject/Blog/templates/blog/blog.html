@@ -1,0 +1,8 @@
+<h1>URMI's {{ blogs.count }} BLOG{{ blogs.count|pluralize }}</h1>
+
+{% for blog in blogs %}
+<br>
+<a href="{% url 'Blog:details' blog.id %}"><h2>{{ blog.title }}</h2></a>
+<h5>{{ blog.date|date:'M d Y'|upper }}</h5>
+<h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
+{% endfor %}

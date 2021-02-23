@@ -1,0 +1,15 @@
+<h1>Urmi's first project!</h1><br>
+{% load static %}
+<img src="{% static 'portfolio/Screenshot (399).png' %}" width="500"><br>
+<h2><a href="{% url 'Blog:all_blogs'%}">Blog</a></h2>
+
+{% for i in display %}
+
+<h2>{{ i.title }}</h2>
+<h3>{{ i.discription }}</h3> <br>
+<img src="{{ i.image.url}}" width="400"><br>
+
+{% if i.url %}
+<a href="{{ i.url }}">don't click</a>
+{% endif %}
+{% endfor %}
