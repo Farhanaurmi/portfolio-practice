@@ -1,8 +1,45 @@
-<h1>URMI's {{ blogs.count }} BLOG{{ blogs.count|pluralize }}</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body style=" background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,184,233,1) 100%);">
+<div>
 
-{% for blog in blogs %}
-<br>
-<a href="{% url 'Blog:details' blog.id %}"><h2>{{ blog.title }}</h2></a>
-<h5>{{ blog.date|date:'M d Y'|upper }}</h5>
-<h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
+<br><h1 style="text-align: center;
+    color:rgb(75, 90, 160);
+    width: 30%;
+    padding: 10px;
+    margin-left: 40%;
+    border: 1px solid;
+    border-color: transparent transparent;
+    box-shadow: 0 10px 10px rgb(148, 148, 148);">URMI's {{ blogs.count }} BLOG{{ blogs.count|pluralize }}</h1><br>
+
+
+    <br>
+
+    {% for blog in blogs %}
+    <div style="display: inline-block; 
+        margin: 10px;
+        background-color: rgb(185, 143, 185); 
+        border: 1px solid gray; 
+        box-shadow:0 10px 10px rgb(107, 103, 103); 
+        width:405px; 
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-left: 13px;">
+    <h4 style="color:whitesmoke;"><a href="{% url 'Blog:details' blog.id %}">{{ blog.title }}</a></h4>
+    <h5 style="color:rgb(145, 142, 142)">{{ blog.date|date:'M d Y'|upper }}</h5>
+    <h5 style="color:whitesmoke">{{ blog.date|date:'M d Y'|upper }}</h5> <br>
+    <hr>
+
+</div>
 {% endfor %}
+</div>
+</body>
+</html>

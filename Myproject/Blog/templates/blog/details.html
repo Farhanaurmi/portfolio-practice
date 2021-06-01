@@ -1,4 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body style=" background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,184,233,1) 100%);">
+<div>
 
-<h2>{{ id.title }}</h2>
-<h5>{{ id.date|date:'F jS Y' }}</h5>
-<h4>{{ id.description|safe }}</h4>
+<br><h2 style="text-align: center;
+    color:rgb(75, 90, 160);
+    width: 30%;
+    padding: 10px;
+    margin-left: 40%;
+    border: 1px solid;
+    border-color: transparent transparent;
+    box-shadow: 0 10px 10px rgb(148, 148, 148);">{{ id.title }}</h2><br>
+
+<br><h5 style="text-align: center;
+    color:rgb(216, 216, 216);
+    width: 30%;
+    padding: 10px;
+    margin-left: 40%;
+    border: 1px solid;
+    border-color: transparent transparent;
+    box-shadow: 0 2px 2px rgb(148, 148, 148);">{{ id.date|date:'F jS Y' }}</h5><br>
+
+    <br>
+    <h4 style="padding: 5%;">{{ id.description|safe }}</h4>
+
+</div>
+</body>
+</html>
+
+
