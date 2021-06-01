@@ -1,15 +1,24 @@
-<h1>Urmi's first project!</h1><br>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<div style=" background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,184,233,1) 100%);">
+
+<br><h1 style="text-align: center;color:whitesmoke; background-color: rgb(185, 143, 185);">Urmi's first project!</h1><br>
 {% load static %}
-<img src="{% static 'portfolio/Screenshot (399).png' %}" width="500"><br>
-<h2><a href="{% url 'Blog:all_blogs'%}">Blog</a></h2>
+<div style="margin-left:450px;margin-right:350px; box-shadow:0 10px 10px rgb(107, 103, 103);"><img src="{% static 'portfolio/Screenshot (399).png' %}" width="500"></div><br>
+<h2 class="d-grid gap-2" style="margin:5px;"><a href="{% url 'Blog:all_blogs'%}"  class="btn btn-secondary btn-lg btn-block">Blog</a></h2>
+<br>
 
 {% for i in display %}
-
-<h2>{{ i.title }}</h2>
-<h3>{{ i.discription }}</h3> <br>
-<img src="{{ i.image.url}}" width="400"><br>
-
+<div style="display: inline-block; margin: 10px;background-color: rgb(185, 143, 185); border: 1px solid gray; box-shadow:0 10px 10px rgb(107, 103, 103); width:405px; padding: 20px;">
+<h4 style="color:whitesmoke;">{{ i.title }}</h4>
+<h5 style="color:whitesmoke">{{ i.discription }}</h5> <br>
+<hr>
+<img src="{{ i.image.url}}" width="250"><br>
+<hr>
 {% if i.url %}
 <a href="{{ i.url }}">don't click</a>
 {% endif %}
+</div>
 {% endfor %}
+</div>
+
